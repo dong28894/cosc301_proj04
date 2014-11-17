@@ -4,21 +4,23 @@
 
 #ifndef __THREADSALIVE_H__
 #define __THREADSALIVE_H__
+#include "list.h"
 
 /* ***************************
         type definitions
    *************************** */
 
 typedef struct {
-
+	int value;
+	thread *queue;
 } tasem_t;
 
 typedef struct {
-
+	tasem_t *sem;
 } talock_t;
 
 typedef struct {
-
+	tasem_t *sem;
 } tacond_t;
 
 

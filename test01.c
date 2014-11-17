@@ -6,6 +6,7 @@ void thread1(void *arg)
     int *i = (int *)arg;
     *i += 7;
     fprintf(stderr, "begin t1: %d\n", *i);
+	fflush(stdout);
     ta_yield();
     *i += 7;
     fprintf(stderr, "end t1: %d\n", *i);
