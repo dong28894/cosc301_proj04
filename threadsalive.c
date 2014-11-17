@@ -142,6 +142,7 @@ void ta_cond_destroy(tacond_t *cond) {
 void ta_wait(talock_t *mutex, tacond_t *cond) {
 	ta_unlock(mutex);
 	ta_sem_wait(cond->sem);
+	ta_lock(mutex);
 }
 
 void ta_signal(tacond_t *cond) {
